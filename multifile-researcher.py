@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Version 1.0.0
+# Version 1.0.2
 # Created by Teckinfor with the help of Groumache
 # GitHub : https://github.com/Teckinfor/Multi-file-data-searcher
 
@@ -11,9 +11,12 @@ from os.path import isfile, join
 
 files = [f for f in listdir("database/") if isfile(join("database/", f))]
 
-loading = [" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," ",
-" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "
-" "," "," "," "," "," "," "," "," "," "]
+loading = []
+
+x = 0
+while x < 100 :
+    loading.append(" ")
+    x += 1
 
 nb_files = len(files)
 
