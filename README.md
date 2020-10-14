@@ -2,7 +2,7 @@
 # Multi-file-data-searcher
 
 Script used to search for a character string in several files.
-Kind of like CTRL+F on multiple files.\
+Kind of like CTRL+F on multiple files.
 
 # How it works
 
