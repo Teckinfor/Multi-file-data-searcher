@@ -10,21 +10,14 @@ from os import system
 from os.path import isfile, join
 
 files = [f for f in listdir("database/") if isfile(join("database/", f))]
-
-loading = []
-
-x = 0
-while x < 100 :
-    loading.append(" ")
-    x += 1
-
 nb_files = len(files)
 
+loading = [' '] * 100
 loading_percent = 0
 
 
 print("--------- List of files ---------")
-for file in files :
+for file in files:
     print(file)
 print("---------------------------------")
 print()
@@ -45,16 +38,15 @@ for fichier in files:
     print("Loading [", end="")
     for char in loading:
         print(char, end="")
-    print("]",round(float(loading_percent),2),"%")
+    print("]", round(float(loading_percent), 2), "%")
 
     count += 1
-    loading_percent = (100*count)/nb_files
+    loading_percent = int(100 * count / nb_files)
 
     i = 0
-    while i < int(loading_percent) and i < 99:
+    while i < loading_percent and i < 99:
         loading[i] = "="
         i += 1
-    
 
     with open("database/" + fichier, "r", errors="ignore") as f:
 
@@ -62,28 +54,23 @@ for fichier in files:
             line = f.readline()
             if not line:
                 break
-            
+
             if entry in line:
-                i = [fichier, line]
-                results.append(i)
+                result = [fichier, line]
+                results.append(result)
                 isIn = True
                 break
 
     system("cls")
 
-if not isIn :
+if not isIn:
     print(entry, "is not in files")
 
-else :
-    print(entry,'is in :')
-    for result in results :
-        print("-",result[0],"--->",result[1])
+else:
+    print(entry, 'is in :')
+    for result in results:
+        print("-", result[0], "--->", result[1])
     print()
 print()
 
 input("Press ENTER to close")
-
-
-
-
-
