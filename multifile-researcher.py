@@ -15,6 +15,8 @@ nb_files = len(files)
 loading = [' '] * 100
 loading_percent = 0
 
+count = 0
+
 
 print("--------- List of files ---------")
 for file in files:
@@ -34,7 +36,7 @@ results = []
 
 for fichier in files:
 
-    print("Searching for", entry)
+    print("Searching for", entry, "--- [Currently",count,"found]")
     print("Loading [", end="")
     for char in loading:
         print(char, end="")
@@ -58,6 +60,7 @@ for fichier in files:
             if entry in line:
                 result = [fichier, line]
                 results.append(result)
+                count += 1
                 isIn = True
                 break
 
