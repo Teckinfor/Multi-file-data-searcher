@@ -9,3 +9,7 @@ Kind of like CTRL+F on multiple files.
 You just have to put your files in the folder "database".\
 Then run the script, enter your search, wait a minute and... TADA !\
 The script runs alone.
+
+```
+Created by groumache & Teckinfor
+```
